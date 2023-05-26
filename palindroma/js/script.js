@@ -14,7 +14,7 @@ function confrontoPalindroma(inputUtente) {
     console.log(inputUtenteReverse)
     
     //contronto le due parole
-    if(inputUtente === inputUtenteReverse) {
+    if(inputUtente.toLowerCase() === inputUtenteReverse.toLowerCase()) {
         return "parola palindroma"
     }else{
         return "parola non palindroma"
