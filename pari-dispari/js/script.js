@@ -1,24 +1,27 @@
 "use strict";
 
-//pari o dispari
-const pari = 0;
-const dispari = 1;
-console.log("pari:" + pari )
-console.log("dispari:" + dispari )
- 
-// Chiedo all'utente di sceglire pari/ dispari e un numero tra 1 e 5
-let user0_1 = parseInt(prompt("inserisci 0 se scegli pari, 1 se scegli dispari"));
+// Chiedo all'utente di sceglire pari o dispari e un numero tra 1 e 5
+let userChoise = prompt(' Scegli "pari" o "dispari" ');
+console.log(userChoise)
 
-console.log("l'utente ha scelto :" +  user0_1);
+//Controllo inserimento valori
+while( userChoise !== 'pari' && userChoise !== 'dispari'){
+    userChoise = prompt('puoi inserire solo la parola "pari" o "dispari"')
+}
 
+//Chiedo all'utente di inserire un numero da  1 a 5
 let userNumber = parseInt(prompt("inserisci un numero da 1 a 5"));
 console.log("userNumber :" +  userNumber);
+
+// //Controllo inserimento valori
+// while(isNaN(userNumber) || userNumber < 1  || userNumber > 5){
+//     userChoise = parseInt(prompt("inserisci nuovamente un numero da 1 a 5"));
+// }
 
 //Genero un numero randdom per il pc tra 1 e 5
 let pcNumber = Math.floor((Math.random() * 5) + 1);
 console.log("pcNumber :" +  pcNumber);
 
- 
 //Sommo numero utente e numero pc
 let somma = userNumber + pcNumber;
 console.log("somma:" +  somma)
@@ -36,10 +39,10 @@ function controlloSomma(c_somma) {
 }
 
 //Chiamo la funzione per dichiarare il vincitore
-if ((controlloSomma(somma) === 0 ) && (user0_1 === 0)){
+if ((controlloSomma(somma) === 'pari' ) && (userChoise === 'pari')){
     console.log ("Ha vinto il giocatore")
 }
-else if( (controlloSomma(somma) === 1 ) && (user0_1 === 1)){
+else if( (controlloSomma(somma) === 'dispari' ) && (userChoise === 'dispari')){
     console.log ("Ha vinto il giocatore")
 }else{
     console.log ("Ha vinto il pc")
