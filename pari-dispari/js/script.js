@@ -13,10 +13,11 @@ while( userChoise !== 'pari' && userChoise !== 'dispari'){
 let userNumber = parseInt(prompt("inserisci un numero da 1 a 5"));
 console.log("userNumber :" +  userNumber);
 
-// //Controllo inserimento valori
-// while(isNaN(userNumber) || userNumber < 1  || userNumber > 5){
-//     userChoise = parseInt(prompt("inserisci nuovamente un numero da 1 a 5"));
-// }
+//Controllo inserimento valori
+while(isNaN(userNumber) || userNumber < 1  || userNumber > 5){
+
+    userNumber = parseInt(prompt("inserisci nuovamente un numero da 1 a 5"));
+}
 
 //Genero un numero randdom per il pc tra 1 e 5
 let pcNumber = Math.floor((Math.random() * 5) + 1);
